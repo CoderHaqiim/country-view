@@ -2,11 +2,16 @@
 
 import React from 'react'
 import Link from 'next/link'
+import { useContext } from 'react'
+import { SearchbarContext } from '../hooks/utilities/searchbarContext'
 
 export default function Searchitem({image, name, inputRef, setShowSearchbox, id}) {
+  const {setShowSearchbar} = useContext(SearchbarContext) 
+
   const linkAction = () =>{
     setShowSearchbox(false)
     inputRef.current.value = ""
+    setShowSearchbar(false)
   }
 
   return (

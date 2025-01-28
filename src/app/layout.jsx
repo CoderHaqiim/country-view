@@ -19,8 +19,7 @@ export default function RootLayout({ children }) {
           <FavoritesProvider>
             <CountriesProvider>
               <ContinentProvider>
-                <Nav/>
-                  {children}
+                {children}
                 <Footer/>
               </ContinentProvider>
             </CountriesProvider>

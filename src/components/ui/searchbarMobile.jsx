@@ -4,7 +4,7 @@ import { useState } from "react"
 import { useContext } from "react"
 import { CountriesContext } from "../hooks/utilities/countriesContext"
 
-export default function Searchbar({setMatchedCountries,navType,inputRef, setShowSearchbox, setCloseSearchMenu}) {
+export default function SearchbarMobile({setMatchedCountries,inputRef, setShowSearchbox}) {
     const {countries} = useContext(CountriesContext)
     const [mouseIn, setMouseIn] = useState(false)
 
@@ -30,14 +30,14 @@ export default function Searchbar({setMatchedCountries,navType,inputRef, setShow
   };
 
   return (
-    <div className={`${mouseIn? "border-[2px] border-accent" : "border-[0]"} ${navType =='client'? 'flex':'hidden'} flex w-auto items-center justify-between rounded-r20 h-[40px] 
-    md:w-[500px] md:bg-[white] md:p-[4px] md:gap-[5px]`}>
-        <input onChange={manageInput} ref={inputRef} onBlur={()=> setMouseIn(false)} placeholder="search country" onFocus={()=>setMouseIn(true)} type="text" className="px-[10px] items-center caret-accent rounded-[inherit] hidden outline-0
-        md:w-auto md:flex-1 md:h-full md:flex"/>
-        <button onClick={()=>{setCloseSearchMenu(false)}} className='w-[30px] lg:pointer-events-none h-[30px] rounded-rounded bg-white
+    <div className="w-full p-[10px] border-b-[1px] border-b-grey">
+      <div className={`border-[2px] border-accent flex items-center justify-between rounded-r20 h-[40px] w-full bg-white p-[4px] gap-[5px]`}>
+        <input onChange={manageInput} ref={inputRef} onBlur={()=> setMouseIn(false)} placeholder="search country" onFocus={()=>setMouseIn(true)} type="text" className="px-[10px] items-center caret-accent rounded-[inherit] outline-0 w-auto flex-1 h-full"/>
+        <button className='w-[30px] h-[30px] rounded-rounded bg-white
         md:w-[30px] md:h-[30px]'>
           <img src="/search2.svg" alt="search-icon" />
         </button>
+      </div>
     </div>
   )
 }
