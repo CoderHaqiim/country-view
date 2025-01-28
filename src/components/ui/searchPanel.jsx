@@ -4,8 +4,7 @@ import SearchbarMobile from "./searchbarMobile"
 import Searchbox from "./searchbox"
 import { useState } from "react"
 
-export default function SearchPanel({inputRef, closeSearchMenu, setCloseSearchMenu}) {
-    const [matchedCountries, setMatchedCountries] = useState([])
+export default function SearchPanel({inputRef, closeSearchMenu, setCloseSearchMenu, matchedCountries, setMatchedCountries}) {
     const [showSearchbox, setShowSearchbox] = useState(false)
 
   return (

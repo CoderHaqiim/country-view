@@ -4,7 +4,7 @@ import { useState } from "react"
 import { useContext } from "react"
 import { CountriesContext } from "../hooks/utilities/countriesContext"
 
-export default function SearchbarMobile({setMatchedCountries,inputRef, setShowSearchbox}) {
+export default function SearchbarMobile({setMatchedCountries,inputRef,setShowSearchbox}) {
     const {countries} = useContext(CountriesContext)
     const [mouseIn, setMouseIn] = useState(false)
 

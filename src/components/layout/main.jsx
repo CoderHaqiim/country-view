@@ -17,7 +17,8 @@ const {setIsLoading} = useContext(LoadingContext)
 const [filteredCountries, setFilteredCountries] = useState("All")
 const [filtered, setFiltered] = useState(false)
 const inputRef = useRef(null)
-const [closeSearchMenu, setCloseSearchMenu] = useState(false)
+const [closeSearchMenu, setCloseSearchMenu] = useState(true)
+const [matchedCountries, setMatchedCountries] = useState([])
 
 useEffect(()=>{
   getCountries(setCountries, setIsLoading)
@@ -25,8 +26,8 @@ useEffect(()=>{
 
   return (
     <main className='w-full relative h-[max-content] min-h-full flex-col bg-white flex'>
-        <SearchPanel inputRef={inputRef} closeSearchMenu={closeSearchMenu} setCloseSearchMenu={setCloseSearchMenu}/>
-        <Nav setCloseSearchMenu={setCloseSearchMenu} navType="client" inputRef={inputRef}/>
+        <SearchPanel matchedCountries={matchedCountries} setMatchedCountries={setMatchedCountries} inputRef={inputRef} closeSearchMenu={closeSearchMenu} setCloseSearchMenu={setCloseSearchMenu}/>
+        <Nav matchedCountries={matchedCountries} setMatchedCountries={setMatchedCountries} setCloseSearchMenu={setCloseSearchMenu} navType="client" inputRef={inputRef}/>
         <Hero/>
         <Filter setFilteredCountries={setFilteredCountries} setFiltered={setFiltered} filteredCountries={filteredCountries}/>
         <Content filteredCountries={filteredCountries} filtered={filtered}/>
