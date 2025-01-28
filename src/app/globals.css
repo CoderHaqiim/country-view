@@ -1,21 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+body{
+  width:100%;
+  font-family: "Montserrat", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  height:auto;
+  min-height:100vh;
+  background-color:#b4c611;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+.filter::-webkit-scrollbar, .search::-webkit-scrollbar{
+  width:0;
+  height:0;
+}
+
+.search::after{
+  background:linear-gradient(360deg,#FDF7F4, #FDF7F4,transparent 90%);
+}
+
+.hero::after{
+  background:linear-gradient(120deg,black,transparent 100%);
+}
+
+.bounce{
+  animation:bounce 1s infinite linear;
+}
+.bounce2{
+  animation-delay:.2s;
+}
+.bounce3{
+  animation-delay:.4s;
+}
+.bounce4{
+  animation-delay:.8s;
+}
+
+
+@keyframes bounce{
+  0%,100%{
+    transform:translateY(2px)
   }
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  50%{
+    transform:translateY(-2px)
+  }
 }
