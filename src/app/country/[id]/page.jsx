@@ -50,11 +50,11 @@ export default async function page({params}) {
               </tr>
               <tr>
                 <td className='lg:text-[1.2rem] text-[1rem] md:text-[1.5rem] font-[500]'>Capital:</td>
-                <td className='lg:text-[1.2rem] text-[1rem] px-[10px] md:px-[20px] md:text-[1.5rem]'>{country?.capital[0]}</td>
+                <td className='lg:text-[1.2rem] text-[1rem] px-[10px] md:px-[20px] md:text-[1.5rem]'>{country?.capital? country.capital[0] :" "}</td>
               </tr>
               <tr>
                 <td className='lg:text-[1.2rem] text-[1rem] md:text-[1.5rem] font-[500]'>Region:</td>
-                <td className='lg:text-[1.2rem] text-[1rem] px-[10px] md:px-[20px] md:text-[1.5rem]'>{country?.continents[0]}</td>
+                <td className='lg:text-[1.2rem] text-[1rem] px-[10px] md:px-[20px] md:text-[1.5rem]'>{country.continents? country?.continents[0] : " "}</td>
               </tr>
               <tr>
                 <td className='lg:text-[1.2rem] text-[1rem] md:text-[1.5rem] font-[500]'>Population:</td>
