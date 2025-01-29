@@ -14,10 +14,10 @@ export default function Button({type, setFiltered, selected, id, setSelected, te
   }
 
   const favStyle = {
-    background: 'linear-gradient(120deg, #FF000030,#169f1630,#ae12a440,#d3d678,#FA00BB20)'
+    background: 'linear-gradient(120deg, #FF000030,#169f1640,#ae12a440,#d3d67840,#FA00BB40)',
   }
 
-  const buttonStyle = `${selected === id? "border-[1px] text-accent border-accent" : "border-0 text-white"} whitespace-nowrap hover:bg-[#453936] px-[10px] bg-dark2 w-[max-content] h-[35px] rounded-[8px]`
+  const buttonStyle = `${selected === id? "border-[1px] shadow-[0px 2px 5px -2px black] text-accent border-accent" : "border-0 text-white"} whitespace-nowrap hover:bg-[#453936] px-[10px] bg-dark2 w-[max-content] h-[35px] rounded-[8px]`
 
   return (
     text === "Favorites"? <button onClick={buttonAction} style={favStyle} className={buttonStyle}>{text}</button> :
