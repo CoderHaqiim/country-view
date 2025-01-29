@@ -10,7 +10,6 @@ const getCountry = async function(id) {
     }
     return await res.json();
   } catch (error) {
-    console.error('Error fetching country data:', error.message);
     return null;
   }
 };

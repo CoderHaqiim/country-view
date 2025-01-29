@@ -5,10 +5,9 @@ export async function getCountries(setCountries, setIsLoading){
         throw new Error('Failed to fetch data');
       }
       const countries = await response.json();
-      console.log(countries)
       setCountries(countries)
     } catch (error) {
-      console.error("Error fetching data:", error);
+      document.write('Error occured fetching countries')
     }finally{
       setIsLoading(false)
     }
