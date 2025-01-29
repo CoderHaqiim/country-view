@@ -12,7 +12,7 @@ export default function Filter({setFiltered}) {
     <nav className='filter lg:px-lp px-sp w-full flex items-center overflow-x-scroll gap-[10px] bg-dark flex h-[50px]'>
       {
         continents.map(continent=> 
-        <Button type="filter" key={continent.id} id={continent.id} selected={selected} setSelected={setSelected} setFiltered={setFiltered} text={continent.name}/>)
+        <Button type="filter" key={continent?.id} id={continent?.id} selected={selected} setSelected={setSelected} setFiltered={setFiltered} text={continent?.name}/>)
       }
     </nav>
   )

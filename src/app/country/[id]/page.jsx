@@ -1,37 +1,34 @@
 import React from 'react'
-import Header from '@/components/ui/header'
 import Nav from '@/components/layout/nav'
 
-const getCountry = async function(id){
-  const URL = `https://restcountries.com/v3.1/alpha/${id}`
-  try{
-    const res = await fetch(URL)
-    if(!res.ok){
-      return
-    }else{
-      const response = await res.json()
-      return response
+const getCountry = async function(id) {
+  const URL = `https://restcountries.com/v3.1/alpha/${id}`;
+  try {
+    const res = await fetch(URL);
+    if (!res.ok) {
+      throw new Error(`Error: ${res.status} - ${res.statusText}`);
     }
-  }catch (error) {
-    console.error('Error fetching country data:', error);
+    return await res.json();
+  } catch (error) {
+    console.error('Error fetching country data:', error.message);
     return null;
   }
-}
+};
 
 export default async function page({params}) {
   const {id} = await params
   const [country] = await getCountry(id)
 
   const style = {
-    background: `url(${country.coatOfArms.png})`,
+    background: `url(${country?.coatOfArms.png})`,
     backgroundRepeat: 'no-repeat',
     backgroundPosition: "center top"
   }
   
   return (
-    <div>
+    <div className='w-full flex flex-col items-center'>
       <Nav navType='server'/>
-      <div className='w-full min-h-[650px] flex flex-col px-sp lg:min-h-[400px] relative h-[calc(100vh-150px)] bg-white lg:p-lp lg:flex-row'>
+      <div className='w-full max-w-[2000px] min-h-[650px] flex flex-col px-sp lg:min-h-[400px] relative h-[calc(100vh-150px)] bg-white lg:p-lp lg:flex-row'>
       <div className='w-full absolute h-full left-0 opacity-[0.05] top-0' style={style}></div>
       <div className='w-full h-1/2 flex justify-center z-[3] items-center lg:h-full lg:w-1/2'>
         <div className='w-[300px] h-[200px] md:w-[500px] md:h-[300px] lg:w-[300px] lg:h-[200px]  rounded-r10  p-[20px] bg-grey'>

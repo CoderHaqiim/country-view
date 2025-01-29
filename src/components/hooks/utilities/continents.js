@@ -8,5 +8,6 @@ export const continents = [
     {name:"South America", id:4, adj:"South-American"},
     {name:"Asia", id:5, adj:"Asian"},
     {name:"Oceania", id:6, adj:"Oceanian"},
-    {name:"Antarctica", id:7, adj:"Antarctic"}
+    {name:"Antarctica", id:7, adj:"Antarctic"},
+    {name:"Favorites", id:8, adj:"Favorite"}
   ]

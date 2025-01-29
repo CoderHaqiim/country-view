@@ -23,9 +23,14 @@ export default function Searchbar({setMatchedCountries,navType,inputRef, setShow
       country.name.common.toLowerCase().includes(searchValue)
     );
     const matchedCountries = [...matched].sort((a, b) => 
-      (a.name.common).localeCompare(b.name.common,'en', { sensitivity: 'base' })
+      (a.name.common).localeCompare(b.name.common)
     );
-    setMatchedCountries(matched)
+
+      if(!matchedCountries.length){
+        setShowSearchbox(false)
+      }else{
+        setMatchedCountries(matchedCountries)
+      }
     }
   };
 

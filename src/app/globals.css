@@ -11,7 +11,7 @@ body{
   font-style: normal;
   height:auto;
   min-height:100vh;
-  background-color:#b4c611;
+  background-color:white;
 }
 
 .filter::-webkit-scrollbar, .search::-webkit-scrollbar{
