@@ -17,7 +17,13 @@ const getCountry = async function(id) {
 
 export default async function page({params}) {
   const {id} = await params
-  const [country] = await getCountry(id)
+  const countryData  = await getCountry(id)
+
+  if (!countryData) {
+    return <p className='w-full h-[100vh] flex items-center justify-center'>Oops! something went wrong | 500</p>;
+  }
+
+  const country = Array.isArray(countryData) ? countryData[0] : countryData;
 
   const style = {
     background: `url(${country?.coatOfArms.png})`,
@@ -32,7 +38,7 @@ export default async function page({params}) {
       <div className='w-full absolute h-full left-0 opacity-[0.05] top-0' style={style}></div>
       <div className='w-full h-1/2 flex justify-center z-[3] items-center lg:h-full lg:w-1/2'>
         <div className='w-[300px] h-[200px] md:w-[500px] md:h-[300px] lg:w-[300px] lg:h-[200px]  rounded-r10  p-[20px] bg-grey'>
-          <img className='w-full h-full rounded-[inherit]' src={country?.flags.png} alt="flag" /> 
+          <img className='w-full h-full rounded-[inherit]' src={country?.flags?.png} alt="flag" /> 
         </div>
       </div>
       <div className={`w-full flex flex-col z-[3] lg:items-start items-center lg:justify-start lg:justify-center h-1/2 relative lg:h-full lg:w-1/2 `}>
