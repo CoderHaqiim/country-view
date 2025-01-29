@@ -27,6 +27,10 @@ body{
   background:linear-gradient(120deg,black,transparent 100%);
 }
 
+img{
+  pointer-events: none;
+}
+
 .bounce{
   animation:bounce 1s infinite linear;
 }

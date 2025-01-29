@@ -25,7 +25,7 @@ export default function Searchbar({setMatchedCountries,navType,inputRef, setShow
     const matchedCountries = [...matched].sort((a, b) => 
       (a.name.common).localeCompare(b.name.common,'en', { sensitivity: 'base' })
     );
-    setMatchedCountries(matchedCountries)
+    setMatchedCountries(matched)
     }
   };
 

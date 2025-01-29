@@ -5,8 +5,9 @@ import Searchbar from '../ui/searchbar'
 import Searchbox from '../ui/searchbox'
 import Link from 'next/link'
 
-export default function Nav({navType, inputRef,matchedCountries,setMatchedCountries, setCloseSearchMenu}) {
+export default function Nav({navType, inputRef, setCloseSearchMenu}) {
   const [showSearchbox, setShowSearchbox] = useState(false)
+  const [matchedCountries, setMatchedCountries] = useState([])
 
   return (
     <nav className='w-full sticky top-[-16px] z-[50] h-[80px]'>
