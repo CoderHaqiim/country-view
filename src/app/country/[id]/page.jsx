@@ -20,7 +20,14 @@ export default async function page({params}) {
   const countryData  = await getCountry(id)
 
   if (!countryData) {
-    return <p className='w-full h-[100vh] flex items-center justify-center'>Oops! something went wrong | 500</p>;
+    return (
+      <div>
+         <Nav navType='server'/>
+        <p className='w-full h-[100vh] flex items-center justify-center'>
+          Oops! something went wrong | server error
+        </p>
+      </div>
+      )
   }
 
   const country = Array.isArray(countryData) ? countryData[0] : countryData;
