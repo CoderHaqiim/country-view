@@ -2,7 +2,7 @@
 
 import { useState} from "react"
 import { useContext } from "react"
-import { CountriesContext } from "../hooks/utilities/countriesContext"
+import { CountriesContext } from "../utilities/countriesContext"
 
 export default function Searchbar2({setMatchedCountries, inputRef}) {
     const {countries} = useContext(CountriesContext)

@@ -7,9 +7,10 @@ import Content from './content'
 import { useEffect, useContext, useState, useRef} from 'react'
 import { getCountries } from '../hooks/getCountries'
 import Nav from './nav'
-import { CountriesContext } from '../hooks/utilities/countriesContext'
-import { LoadingContext } from '../hooks/utilities/loadingContext'
+import { CountriesContext } from '../utilities/countriesContext'
+import { LoadingContext } from '../utilities/loadingContext'
 import SearchPanel from '../ui/searchPanel'
+import Loader from '../ui/loader'
 
 export default function Main() {
 const {setCountries, countries} = useContext(CountriesContext)
@@ -19,12 +20,14 @@ const [filtered, setFiltered] = useState(false)
 const inputRef = useRef(null)
 const [closeSearchMenu, setCloseSearchMenu] = useState(true)
 
+
 useEffect(()=>{
   getCountries(setCountries, setIsLoading)
 },[])
 
   return (
     <main className='w-full relative h-[max-content] min-h-full flex-col bg-white flex'>
+        <Loader/>
         <SearchPanel closeSearchMenu={closeSearchMenu} setCloseSearchMenu={setCloseSearchMenu}/>
         <Nav setCloseSearchMenu={setCloseSearchMenu} navType="client" inputRef={inputRef}/>
         <Hero/>

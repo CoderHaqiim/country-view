@@ -2,12 +2,12 @@
 import React from 'react'
 import Header from '../ui/header'
 import Card from '../ui/card'
-import { useContext, useState} from 'react'
-import { ContinentContext} from '../hooks/utilities/continentContext'
-import { CountriesContext} from '../hooks/utilities/countriesContext'
-import { LoadingContext } from '../hooks/utilities/loadingContext'
+import { useContext} from 'react'
+import { ContinentContext} from '../utilities/continentContext'
+import { CountriesContext} from '../utilities/countriesContext'
+import { LoadingContext } from '../utilities/loadingContext'
 import LazyComponent from '../ui/lazyComponent'
-import { FavoritesContext } from '../hooks/utilities/favoritesContext'
+import { FavoritesContext } from '../utilities/favoritesContext'
 
 
 export default function Content({filtered}) {

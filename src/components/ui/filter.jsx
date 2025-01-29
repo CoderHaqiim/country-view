@@ -3,7 +3,7 @@
 import React from 'react'
 import { useState } from 'react'
 import Button from './button'
-import { continents } from '../hooks/utilities/continents'
+import { continents } from '../utilities/continents'
 
 export default function Filter({setFiltered}) {
   const [selected, setSelected] = useState(0) 

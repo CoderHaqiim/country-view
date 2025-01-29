@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import { useContext } from "react"
-import { CountriesContext } from "../hooks/utilities/countriesContext"
+import { CountriesContext } from "../utilities/countriesContext"
 
 export default function Searchbar({setMatchedCountries,navType,inputRef, setShowSearchbox, setCloseSearchMenu}) {
     const {countries} = useContext(CountriesContext)
@@ -18,19 +18,14 @@ export default function Searchbar({setMatchedCountries,navType,inputRef, setShow
       return
     }else{
     setShowSearchbox(true)
-    const searchValue = inputRef.current.value.toLowerCase();
-    const matched = countries.filter(country => 
-      country.name.common.toLowerCase().includes(searchValue)
+      const searchValue = inputRef.current.value.toLowerCase();
+      const matched = countries.filter(country => country.name.common.toLowerCase().includes(searchValue)
     );
     const matchedCountries = [...matched].sort((a, b) => 
       (a.name.common).localeCompare(b.name.common)
     );
 
-      if(!matchedCountries.length){
-        setShowSearchbox(false)
-      }else{
-        setMatchedCountries(matchedCountries)
-      }
+      !matchedCountries.length? setShowSearchbox(false):setMatchedCountries(matchedCountries)
     }
   };
 

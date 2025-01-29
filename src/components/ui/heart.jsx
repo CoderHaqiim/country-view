@@ -2,7 +2,7 @@
 
 import React from 'react'
 import { useState, useEffect} from 'react'
-import { FavoritesContext } from '../hooks/utilities/favoritesContext'
+import { FavoritesContext } from '../utilities/favoritesContext'
 import { useContext } from 'react'
 
 export default function Heart({id}) {
