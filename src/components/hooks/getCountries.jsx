@@ -7,7 +7,7 @@ export async function getCountries(setCountries, setIsLoading){
       const countries = await response.json();
       setCountries(countries)
     } catch (error) {
-      document.write('Error occured fetching countries')
+      document.write(error, 'Error occured fetching countries')
     }finally{
       setIsLoading(false)
     }
