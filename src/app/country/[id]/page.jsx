@@ -6,7 +6,7 @@ const getCountry = async function(id) {
   try {
     const res = await fetch(URL, {
       headers:{
-        Authorization: `Bearer ${process.env.PUBLIC_API_TOKEN}`
+        Authorization: `Bearer ${process.env.NEXT_PUBLIC_API_TOKEN}`
       }
     });
     if (!res.ok) {
