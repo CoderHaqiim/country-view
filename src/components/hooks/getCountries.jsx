@@ -1,6 +1,6 @@
 export async function getCountries(setCountries, setIsLoading){
     try {
-      const response = await fetch('https://restcountries.com/v3.1/all?fields=name,cca3,flags,continents,population,coatOfArms',{
+      const response = await fetch('https://api.restcountries.com/countries/v5?response_fields=names,codes.alpha_3,flag,continents,population,coat_of_arms&limit=100',{
           headers:{
             Authorization: `Bearer ${process.env.NEXT_PUBLIC_API_TOKEN}`
           }

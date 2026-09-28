@@ -2,7 +2,7 @@ import React from 'react'
 import Nav from '@/components/layout/nav'
 
 const getCountry = async function(id) {
-  const URL = `https://restcountries.com/v3.1/alpha/${id}`;
+ const URL = `https://api.restcountries.com/countries/v5/codes.alpha_3/${id}`;
   try {
     const res = await fetch(URL, {
       headers:{
