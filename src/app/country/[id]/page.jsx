@@ -4,7 +4,11 @@ import Nav from '@/components/layout/nav'
 const getCountry = async function(id) {
   const URL = `https://restcountries.com/v3.1/alpha/${id}`;
   try {
-    const res = await fetch(URL);
+    const res = await fetch(URL, {
+      headers:{
+        Authorization: `Bearer ${process.env.PUBLIC_API_TOKEN}`
+      }
+    });
     if (!res.ok) {
       throw new Error(`Error: ${res.status} - ${res.statusText}`);
     }
